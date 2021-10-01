@@ -1,7 +1,7 @@
 """
-Title: Artist Compare
+Title: Mesh Graph Network
 Author: Akshay Shirsath
-Icons made by www.flaticon.com
+Logo Icon Source: www.flaticon.com
 """
 ############################################
 ############## Libraries ###################
