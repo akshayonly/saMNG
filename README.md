@@ -9,7 +9,7 @@
 - In the later work, I'm hoping to extract important words (terms) from the abstract and through NLP and Semantic word theory. 
 
 ---
-s
+
 - Click Here 👉🏻 [Link](https://artist-compare.herokuapp.com/)
 
 ![image](https://raw.githubusercontent.com/akshayonly/Artist-Compare/main/Screenshot.png)
