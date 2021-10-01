@@ -59,9 +59,9 @@ def removeSpecialChar(string):
 image = Image.open('MeSH-Graph.png')
 st.image(image, use_column_width=True)
 
-st.markdown("Visualise PubMed article's MeSH terms as Graph Network.")
+st.markdown("This web application visualizes MeSH terms in the PubMed article as Network-Graph representation.")
 
-expander_bar = st.beta_expander("About Site")
+expander_bar = st.expander("About Site")
 expander_bar.markdown("""
 * **version 1.5**
 * **Python Libraries:** streamlit, pyvis, networkx, biopython.
