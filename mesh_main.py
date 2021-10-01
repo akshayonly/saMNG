@@ -1,3 +1,10 @@
+"""
+Title: Artist Compare
+Author: Akshay Shirsath
+Icons made by www.flaticon.com
+"""
+############################################
+############## Libraries ###################
 
 # Web Application
 import streamlit as st
@@ -13,9 +20,8 @@ import numpy as np
 import networkx as nx
 from pyvis.network import Network
 
-# Logo
-image = Image.open('MeSH-Graph.png')
-st.image(image, use_column_width=True)
+############################################
+########### Custom Function ################
 
 @st.cache
 def pubmedData(pmid):
@@ -46,8 +52,22 @@ def removeSpecialChar(string):
     
     return string
 
-st.text('v1.5')
+############################################
+################## Main ####################
+
+# Logo
+image = Image.open('MeSH-Graph.png')
+st.image(image, use_column_width=True)
+
 st.markdown("Visualise PubMed article's MeSH terms as Graph Network.")
+
+expander_bar = st.beta_expander("About Site")
+expander_bar.markdown("""
+* **version 1.5**
+* **Python Libraries:** streamlit, pyvis, networkx, biopython.
+* **Data source:** PubMed Entrez
+* **Author:** Akshay Shirsath   
+""")
 
 st.subheader('Enter PubMed Article URL')
 default_url = "https://pubmed.ncbi.nlm.nih.gov/21371747/"
