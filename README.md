@@ -10,6 +10,6 @@
 
 ---
 
-- Click Here 👉🏻 [Link](https://artist-compare.herokuapp.com/)
+- Click Here 👉🏻 [Link](https://mesh-graphviz.herokuapp.com/)
 
 ![image](https://raw.githubusercontent.com/akshayonly/Artist-Compare/main/Screenshot.png)
