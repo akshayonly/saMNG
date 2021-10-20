@@ -8,6 +8,6 @@ Researching about a topic is a tedious process when most of the time is spent on
 ---
 
 - 👉🏻 [Web App](https://mesh-graphviz.herokuapp.com/)
-- 👉🏻 [Demo Video](https://www.youtube.com/watch?v=9C_3784PibE)
+- 👉🏻 [Demo Video](https://www.youtube.com/watch?v=795SJCnL3iE)
 
 ![image](https://raw.githubusercontent.com/akshayonly/MeSH-Graph/main/MeSH-Graph.png)
