@@ -1,1 +1,1 @@
-web: sh setup.sh && streamlit run mesh_main.py
+web: sh setup.sh && streamlit run saMNG_main.py
