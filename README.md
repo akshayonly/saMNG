@@ -1,5 +1,5 @@
 # Single Article MeSH Network Graph (SA-MNG)
-![image](https://raw.githubusercontent.com/akshayonly/MeSH-Graph/main/MeSH-Graph.png)
+![image](https://raw.githubusercontent.com/akshayonly/saMNG/main/saMNG_logo.png)
 
 - This web application visualizes MeSH terms in a PubMed article as Network-Graph representation.
 
