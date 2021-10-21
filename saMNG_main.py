@@ -67,6 +67,7 @@ expander_bar.markdown("""
 * **Python Libraries:** streamlit, pyvis, networkx, biopython.
 * **Data source:** PubMed Entrez
 * **Author:** Akshay Shirsath   
+* **Compare Two Topics:** [Click-Here](https://tcmng.herokuapp.com/)
 """)
 
 st.subheader('Enter PubMed Article URL')
