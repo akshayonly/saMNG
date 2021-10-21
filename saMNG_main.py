@@ -56,7 +56,7 @@ def removeSpecialChar(string):
 ################## Main ####################
 
 # Logo
-image = Image.open('MeSH-Graph.png')
+image = Image.open('saMNG_logo.png')
 st.image(image, use_column_width=True)
 
 st.markdown("This web application visualizes MeSH terms in the PubMed article as Network-Graph representation.")
