@@ -1,5 +1,5 @@
 """
-Title: Mesh Graph Network
+Title: Single Article Mesh Graph Network
 Author: Akshay Shirsath
 Logo Icon Source: www.flaticon.com
 """
@@ -63,7 +63,7 @@ st.markdown("This web application visualizes MeSH terms in the PubMed article as
 
 expander_bar = st.expander("About Site")
 expander_bar.markdown("""
-* **version 1.5**
+* **version 1.8**
 * **Python Libraries:** streamlit, pyvis, networkx, biopython.
 * **Data source:** PubMed Entrez
 * **Author:** Akshay Shirsath   
