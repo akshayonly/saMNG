@@ -1,0 +1,80 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis.css" type="text/css" />
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis-network.min.js"> </script>
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+
+<style type="text/css">
+
+        #mynetwork {
+            width: 75%;
+            height: 750px;
+            background-color: #ecf0f1;
+            border: 1px solid lightgray;
+            position: relative;
+            float: left;
+        }
+
+        
+
+        
+
+        
+</style>
+
+</head>
+
+<body>
+<div id = "mynetwork"></div>
+
+
+<script type="text/javascript">
+
+    // initialize global variables.
+    var edges;
+    var nodes;
+    var network; 
+    var container;
+    var options, data;
+
+    
+    // This method is responsible for drawing the graph, returns the drawn network
+    function drawGraph() {
+        var container = document.getElementById('mynetwork');
+        
+        
+
+        // parsing and collecting nodes and edges from the python
+        nodes = new vis.DataSet([{"color": "#0c2461", "font": {"color": "#1e272e"}, "id": "PMID_32720228", "label": "PMID_32720228", "shape": "dot", "size": 35, "title": "Molecular modeling and simulation study of homoserine kinase as an effective leishmanial drug target."}, {"color": "#4a69bd", "font": {"color": "#1e272e"}, "id": "Amino Acid Motifs", "label": "Amino Acid Motifs", "shape": "dot", "size": 25}, {"color": "#4a69bd", "font": {"color": "#1e272e"}, "id": "Amino Acid Sequence", "label": "Amino Acid Sequence", "shape": "dot", "size": 25}, {"color": "#4a69bd", "font": {"color": "#1e272e"}, "id": "Catalysis", "label": "Catalysis", "shape": "dot", "size": 25}, {"color": "#4a69bd", "font": {"color": "#1e272e"}, "id": "Conserved Sequence", "label": "Conserved Sequence", "shape": "dot", "size": 25}, {"color": "#4a69bd", "font": {"color": "#1e272e"}, "id": "Enzyme Inhibitors", "label": "Enzyme Inhibitors", "shape": "dot", "size": 25}, {"color": "#6a89cc", "font": {"color": "#1e272e"}, "id": "chemistry", "label": "chemistry", "shape": "dot", "size": 15}, {"color": "#6a89cc", "font": {"color": "#1e272e"}, "id": "pharmacology", "label": "pharmacology", "shape": "dot", "size": 15}, {"color": "#4a69bd", "font": {"color": "#1e272e"}, "id": "Humans", "label": "Humans", "shape": "dot", "size": 25}, {"color": "#4a69bd", "font": {"color": "#1e272e"}, "id": "Leishmania", "label": "Leishmania", "shape": "dot", "size": 25}, {"color": "#4a69bd", "font": {"color": "#1e272e"}, "id": "Molecular Docking Simulation", "label": "Molecular Docking Simulation", "shape": "dot", "size": 25}, {"color": "#4a69bd", "font": {"color": "#1e272e"}, "id": "Molecular Dynamics Simulation", "label": "Molecular Dynamics Simulation", "shape": "dot", "size": 25}, {"color": "#4a69bd", "font": {"color": "#1e272e"}, "id": "Phosphotransferases (Alcohol Group Acceptor)", "label": "Phosphotransferases (Alcohol Group Acceptor)", "shape": "dot", "size": 25}, {"color": "#6a89cc", "font": {"color": "#1e272e"}, "id": "antagonists \u0026 inhibitors", "label": "antagonists \u0026 inhibitors", "shape": "dot", "size": 15}, {"color": "#4a69bd", "font": {"color": "#1e272e"}, "id": "Protein Binding", "label": "Protein Binding", "shape": "dot", "size": 25}, {"color": "#4a69bd", "font": {"color": "#1e272e"}, "id": "Small Molecule Libraries", "label": "Small Molecule Libraries", "shape": "dot", "size": 25}, {"color": "#4a69bd", "font": {"color": "#1e272e"}, "id": "Structure-Activity Relationship", "label": "Structure-Activity Relationship", "shape": "dot", "size": 25}, {"color": "#4a69bd", "font": {"color": "#1e272e"}, "id": "Trypanocidal Agents", "label": "Trypanocidal Agents", "shape": "dot", "size": 25}]);
+        edges = new vis.DataSet([{"from": "PMID_32720228", "to": "Amino Acid Motifs"}, {"from": "PMID_32720228", "to": "Amino Acid Sequence"}, {"from": "PMID_32720228", "to": "Catalysis"}, {"from": "PMID_32720228", "to": "Conserved Sequence"}, {"from": "PMID_32720228", "to": "Enzyme Inhibitors"}, {"from": "Enzyme Inhibitors", "to": "chemistry"}, {"from": "Enzyme Inhibitors", "to": "pharmacology"}, {"from": "PMID_32720228", "to": "Humans"}, {"from": "PMID_32720228", "to": "Leishmania"}, {"from": "PMID_32720228", "to": "Molecular Docking Simulation"}, {"from": "PMID_32720228", "to": "Molecular Dynamics Simulation"}, {"from": "PMID_32720228", "to": "Phosphotransferases (Alcohol Group Acceptor)"}, {"from": "Phosphotransferases (Alcohol Group Acceptor)", "to": "antagonists \u0026 inhibitors"}, {"from": "Phosphotransferases (Alcohol Group Acceptor)", "to": "chemistry"}, {"from": "PMID_32720228", "to": "Protein Binding"}, {"from": "PMID_32720228", "to": "Small Molecule Libraries"}, {"from": "PMID_32720228", "to": "Structure-Activity Relationship"}, {"from": "PMID_32720228", "to": "Trypanocidal Agents"}, {"from": "Trypanocidal Agents", "to": "chemistry"}, {"from": "Trypanocidal Agents", "to": "pharmacology"}]);
+
+        // adding nodes and edges to the graph
+        data = {nodes: nodes, edges: edges};
+
+        var options = {"edges": {"arrows": {"to": {"enabled": true, "scaleFactor": 0.5}}, "color": {"inherit": true}, "smooth": {"forceDirection": "none"}}, "physics": {"barnesHut": {"gravitationalConstant": -17350, "springLength": 210, "springConstant": 0.055, "avoidOverlap": 0.53}, "minVelocity": 0.75}};
+        
+        
+
+        
+
+        network = new vis.Network(container, data, options);
+	 
+        
+
+
+        
+
+        return network;
+
+    }
+
+    drawGraph();
+
+</script>
+</body>
+</html>
